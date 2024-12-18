@@ -1,0 +1,12 @@
+
+
+services:
+  flask-app:
+    build: .                      # Build the image from the current directory
+    container_name: flask_app_container
+    ports:
+      - "5000:5000"               # Map container port 5000 to host port 5000
+    volumes:
+      - .:/app                    # Mount project directory into the container
+    environment:
+      - FLASK_ENV=development     # Flask environment
